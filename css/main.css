@@ -1,0 +1,40 @@
+
+.twitter{
+    float: left;
+    background: url('../images/redes.png') no-repeat -3px -4px;
+    width: 50px;
+    height: 50px;
+}
+.facebook{
+    float: left;
+    background: url('../images/redes.png') no-repeat -60px -4px;
+    width: 50px;
+    height: 50px;
+}
+.youtube{
+    float: left;
+    background: url('../images/redes.png') no-repeat -292px -4px;
+    width: 50px;
+    height: 50px;
+}
+.twitter:hover{
+    float: left;
+    background: url('../images/redes.png') no-repeat -2px -61px;
+    width: 50px;
+    height: 50px;
+}
+.facebook:hover{
+    float: left;
+    background: url('../images/redes.png') no-repeat -59px -61px;
+    width: 50px;
+    height: 50px;
+}
+.youtube:hover{
+    float: left;
+    background: url('../images/redes.png') no-repeat -291px -61px;
+    width: 50px;
+    height: 50px;
+}
+.backgroundc{
+    background-color: #005073;
+}
