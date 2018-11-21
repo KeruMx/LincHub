@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f4c3f7db-2e63-4309-8f59-9b0bf0436c78" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/Linchub.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/footer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/help.html" beforeDir="false" afterPath="$PROJECT_DIR$/help.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/looking.html" beforeDir="false" afterPath="$PROJECT_DIR$/looking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m_arch.html" beforeDir="false" afterPath="$PROJECT_DIR$/m_arch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantilla.html" beforeDir="false" afterPath="$PROJECT_DIR$/plantilla.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prices.html" beforeDir="false" afterPath="$PROJECT_DIR$/prices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/privacy.html" beforeDir="false" afterPath="$PROJECT_DIR$/privacy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reg.html" beforeDir="false" afterPath="$PROJECT_DIR$/reg.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoweare.html" beforeDir="false" afterPath="$PROJECT_DIR$/whoweare.html" afterDir="false" />
-    </list>
+    <list default="true" id="f4c3f7db-2e63-4309-8f59-9b0bf0436c78" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,12 +197,12 @@
       <workItem from="1537936384353" duration="2806000" />
       <workItem from="1538533553161" duration="15514000" />
       <workItem from="1542483532654" duration="9154000" />
-      <workItem from="1542811044614" duration="681000" />
+      <workItem from="1542811044614" duration="1107000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58883000" />
+    <option name="totallyTimeSpent" value="59309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
