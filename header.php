@@ -1,16 +1,20 @@
+<?php
+include ('core/Linchub.php');
+$web= new Linchub();
+$web->conexion();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>LincHub</title>
-    <meta name="author" content="Emmanuek Anaya Luna"/>
+    <meta name="author" content="Emmanuel Anaya Luna"/>
     <meta name="description" content="Página de descargas"/>
     <meta name="keywords" content="descarga busca 50gb almacenamiento gratuito"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
 </head>
 <body>
-<div class="container-fluid">
     <!-- Image and text -->
     <header>
 
@@ -46,6 +50,7 @@
             </form>
         </div>
     </nav>
+    <div class="container-fluid">
     <!-- Modal para login -->
     <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -81,64 +86,5 @@
             </div>
         </div>
     </div>
-    <!-- Modal end-->
-    <section>
-        <h2 class="featurette-heading">¿Tienes un problema?<span class="text-muted"> Infórmanos de él</span></h2>
-        <div class="row">
-            <div class="col-md-4">
 
-            </div>
-            <div class="jumbotron col-md-4">
-                <form>
-                    <div class="form-group">
-                        <label>Titulo</label>
-                        <input type="text" class="form-control" placeholder="Titulo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email1">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="email1hp" aria-describedby="emailHelp" placeholder="Correo@Correo.mx">
-                        <small id="emailHelp2" class="form-text text-muted">No compartas tu correo ni tu contraseña con NADIE.</small>
-                    </div>
-                    <div class="form-group">
-                        <label>Describe el problema</label>
-                        <textarea class="form-control" required></textarea>
-                    </div>
-                    <div class="form-grup">
-                        <input type="submit" class="btn btn-success">
-                    </div>
-                </form>
-        </div>
-            </div>
-    </section>
-    <footer>
-        <div class="row">
-            <div class="col-sm">
-                <h1>Acerca de nosotros</h1>
-                <ul>
-                    <li><a href="news.html">Últimas noticias</a></li>
-                    <li><a href="help.html">Centro de ayuda</a></li>
-                    <li><a href="whoweare.html">¿Quienes somos?</a></li>
-                    <li><a href="looking.html">Te estamos buscando</a></li>
-                    <li><a href="prices.html">Planes y precios</a></li>
-                </ul>
-            </div>
-            <div class="col-sm">
-                <h1>Contacto</h1>
-                <ul>
-                    <li><a href="contact.html">¿Donde están los servidores?</a></li>
-                </ul>
-            </div>
-            <div class="col-sm">
-                <h1>Redes Sociales</h1>
-                <div class="twitter"></div>
-                <div class="facebook"></div>
-                <div class="youtube"></div>
-            </div>
-        </div>
-    </footer>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
-</html>
