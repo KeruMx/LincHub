@@ -977,7 +977,7 @@
     <table id="247" parent="4" name="carpetadetalle"/>
     <table id="248" parent="4" name="estado"/>
     <table id="249" parent="4" name="municipio"/>
-    <table id="250" parent="4" name="notica"/>
+    <table id="250" parent="4" name="noticia"/>
     <table id="251" parent="4" name="pago"/>
     <table id="252" parent="4" name="pais"/>
     <table id="253" parent="4" name="tipoarchivo"/>

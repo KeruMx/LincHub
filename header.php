@@ -1,7 +1,6 @@
 <?php
-include ('core/Linchub.php');
-$web= new Linchub();
-$web->conexion();
+include('core/linchub.class.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
