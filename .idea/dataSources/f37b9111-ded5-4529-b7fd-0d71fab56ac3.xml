@@ -980,54 +980,58 @@
     <table id="250" parent="4" name="noticia"/>
     <table id="251" parent="4" name="pago"/>
     <table id="252" parent="4" name="pais"/>
-    <table id="253" parent="4" name="tipoarchivo"/>
-    <table id="254" parent="4" name="tipouser"/>
-    <table id="255" parent="4" name="usuario"/>
-    <column id="256" parent="245" name="idarchivo">
+    <table id="253" parent="4" name="permiso"/>
+    <table id="254" parent="4" name="rol"/>
+    <table id="255" parent="4" name="rol_permiso"/>
+    <table id="256" parent="4" name="rol_usuario"/>
+    <table id="257" parent="4" name="tipoarchivo"/>
+    <table id="258" parent="4" name="tipouser"/>
+    <table id="259" parent="4" name="usuario"/>
+    <column id="260" parent="245" name="idarchivo">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="245" name="archivo">
+    <column id="261" parent="245" name="archivo">
       <Position>2</Position>
       <DataType>varchar(150)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="245" name="tamaño">
+    <column id="262" parent="245" name="tamaño">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="245" name="idtipoarchivo">
+    <column id="263" parent="245" name="idtipoarchivo">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="245" name="idatributo">
+    <column id="264" parent="245" name="idatributo">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="261" parent="245" name="idtipoarchivo">
+    <index id="265" parent="245" name="idtipoarchivo">
       <ColNames>idtipoarchivo</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="262" parent="245" name="idatributo">
+    <index id="266" parent="245" name="idatributo">
       <ColNames>idatributo</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="263" parent="245" name="PRIMARY">
+    <key id="267" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idarchivo</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="264" parent="245" name="archivo_ibfk_1">
+    <foreign-key id="268" parent="245" name="archivo_ibfk_1">
       <ColNames>idtipoarchivo</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>tipoarchivo</RefTableName>
@@ -1035,7 +1039,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="265" parent="245" name="archivo_ibfk_2">
+    <foreign-key id="269" parent="245" name="archivo_ibfk_2">
       <ColNames>idatributo</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>atributo</RefTableName>
@@ -1043,46 +1047,46 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="266" parent="246" name="idatributo">
+    <column id="270" parent="246" name="idatributo">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="246" name="atributo">
+    <column id="271" parent="246" name="atributo">
       <Position>2</Position>
       <DataType>varchar(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="268" parent="246" name="PRIMARY">
+    <key id="272" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idatributo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="269" parent="247" name="idusuario">
+    <column id="273" parent="247" name="idusuario">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="247" name="idarchivo">
+    <column id="274" parent="247" name="idarchivo">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="271" parent="247" name="idarchivo_fk">
+    <index id="275" parent="247" name="idarchivo_fk">
       <ColNames>idarchivo</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="272" parent="247" name="PRIMARY">
+    <key id="276" parent="247" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idusuario</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="273" parent="247" name="carpetadetalle_ibfk_2">
+    <foreign-key id="277" parent="247" name="carpetadetalle_ibfk_2">
       <ColNames>idusuario</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>usuario</RefTableName>
@@ -1090,7 +1094,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="274" parent="247" name="carpetadetalle_ibfk_1">
+    <foreign-key id="278" parent="247" name="carpetadetalle_ibfk_1">
       <ColNames>idarchivo</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>archivo</RefTableName>
@@ -1098,35 +1102,35 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="275" parent="248" name="idestado">
+    <column id="279" parent="248" name="idestado">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="276" parent="248" name="estado">
+    <column id="280" parent="248" name="estado">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="248" name="idpais">
+    <column id="281" parent="248" name="idpais">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="278" parent="248" name="idpais">
+    <index id="282" parent="248" name="idpais">
       <ColNames>idpais</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="279" parent="248" name="PRIMARY">
+    <key id="283" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idestado</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="280" parent="248" name="estado_ibfk_1">
+    <foreign-key id="284" parent="248" name="estado_ibfk_1">
       <ColNames>idpais</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>pais</RefTableName>
@@ -1134,35 +1138,35 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="281" parent="249" name="idmunicipio">
+    <column id="285" parent="249" name="idmunicipio">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="249" name="municipio">
+    <column id="286" parent="249" name="municipio">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="249" name="idestado">
+    <column id="287" parent="249" name="idestado">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="284" parent="249" name="idestado">
+    <index id="288" parent="249" name="idestado">
       <ColNames>idestado</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="285" parent="249" name="PRIMARY">
+    <key id="289" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idmunicipio</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="286" parent="249" name="municipio_ibfk_1">
+    <foreign-key id="290" parent="249" name="municipio_ibfk_1">
       <ColNames>idestado</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>estado</RefTableName>
@@ -1170,198 +1174,270 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="287" parent="250" name="idnoticia">
+    <column id="291" parent="250" name="idnoticia">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="288" parent="250" name="noticia">
+    <column id="292" parent="250" name="noticia">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="250" name="titulo">
+    <column id="293" parent="250" name="titulo">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="250" name="fecha">
+    <column id="294" parent="250" name="fecha">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="250" name="foto">
+    <column id="295" parent="250" name="foto">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="292" parent="250" name="PRIMARY">
+    <key id="296" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idnoticia</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="293" parent="251" name="idpago">
+    <column id="297" parent="251" name="idpago">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="251" name="pago">
+    <column id="298" parent="251" name="pago">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="295" parent="251" name="PRIMARY">
+    <key id="299" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idpago</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="296" parent="252" name="idpais">
+    <column id="300" parent="252" name="idpais">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="252" name="pais">
+    <column id="301" parent="252" name="pais">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="298" parent="252" name="PRIMARY">
+    <key id="302" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idpais</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="299" parent="253" name="idtipoarchivo">
+    <column id="303" parent="253" name="id_permiso">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="253" name="tipoarchivo">
+    <column id="304" parent="253" name="permiso">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="305" parent="253" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_permiso</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="306" parent="254" name="id_rol">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="307" parent="254" name="rol">
+      <Position>2</Position>
+      <DataType>varchar(50)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="308" parent="254" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_rol</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="309" parent="255" name="id_rol">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="310" parent="255" name="id_permiso">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="311" parent="255" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_rol
+id_permiso</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="312" parent="256" name="id_rol">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="313" parent="256" name="id_usuario">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="314" parent="256" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_rol
+id_usuario</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="315" parent="257" name="idtipoarchivo">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="316" parent="257" name="tipoarchivo">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="301" parent="253" name="PRIMARY">
+    <key id="317" parent="257" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idtipoarchivo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="302" parent="254" name="idtipo">
+    <column id="318" parent="258" name="idtipo">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="303" parent="254" name="tipo">
+    <column id="319" parent="258" name="tipo">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="304" parent="254" name="PRIMARY">
+    <key id="320" parent="258" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idtipo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="255" name="idusuario">
+    <column id="321" parent="259" name="idusuario">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="306" parent="255" name="nombre">
+    <column id="322" parent="259" name="nombre">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="307" parent="255" name="apaterno">
+    <column id="323" parent="259" name="apaterno">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="308" parent="255" name="amaterno">
+    <column id="324" parent="259" name="amaterno">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="309" parent="255" name="correo">
+    <column id="325" parent="259" name="correo">
       <Position>5</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="310" parent="255" name="contraseña">
+    <column id="326" parent="259" name="contraseña">
       <Position>6</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="311" parent="255" name="idtipouser">
+    <column id="327" parent="259" name="idtipouser">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="312" parent="255" name="idmunicipio">
+    <column id="328" parent="259" name="idmunicipio">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="255" name="cp">
+    <column id="329" parent="259" name="cp">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="255" name="idpago">
+    <column id="330" parent="259" name="idpago">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="315" parent="255" name="correo">
+    <index id="331" parent="259" name="correo">
       <ColNames>correo</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="316" parent="255" name="idtipouser">
+    <index id="332" parent="259" name="idtipouser">
       <ColNames>idtipouser</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="317" parent="255" name="idmunicipio">
+    <index id="333" parent="259" name="idmunicipio">
       <ColNames>idmunicipio</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="318" parent="255" name="idpago">
+    <index id="334" parent="259" name="idpago">
       <ColNames>idpago</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="319" parent="255" name="PRIMARY">
+    <key id="335" parent="259" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idusuario</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="320" parent="255" name="correo">
+    <key id="336" parent="259" name="correo">
       <ColNames>correo</ColNames>
       <UnderlyingIndexName>correo</UnderlyingIndexName>
     </key>
-    <foreign-key id="321" parent="255" name="usuario_ibfk_4">
+    <foreign-key id="337" parent="259" name="usuario_ibfk_4">
       <ColNames>idtipouser</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>tipouser</RefTableName>
@@ -1369,7 +1445,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="322" parent="255" name="usuario_ibfk_2">
+    <foreign-key id="338" parent="259" name="usuario_ibfk_2">
       <ColNames>idmunicipio</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>municipio</RefTableName>
@@ -1377,7 +1453,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="323" parent="255" name="usuario_ibfk_6">
+    <foreign-key id="339" parent="259" name="usuario_ibfk_6">
       <ColNames>idpago</ColNames>
       <RefSchemaName>linch</RefSchemaName>
       <RefTableName>pago</RefTableName>

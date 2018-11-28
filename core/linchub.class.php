@@ -69,6 +69,93 @@ class linchub{
             default: false;
         }
     }
+    public function obtenerPermisos($email){
+        $this->conexion();
+        $permisos=array();
+        $query="select p.permiso from usuario u
+                  join rol_usuario r using(id_usuario)
+                  join rol_permiso rp USING(id_rol)
+                  join permiso p using(id_permiso)
+                  where u.email = :email";
+        $statement=$this->db->prepare($query);
+        $statement->bindParam(":email",$email);
+        $statement->execute();
+        while ($fila=$statement->fetch(PDO::FETCH_ASSOC)){
+            array_push($permisos,$fila['permiso']);
+        }
+
+        return $permisos;
+    }
+    public function obtenerRoles($email){
+        $this->conexion();
+        $roles = array();
+        $query = "select r.rol from usuario u
+		join rol_usuario ru using(id_usuario)
+		join rol r using(id_rol)
+		where u.email = :email";
+        $statement = $this->db->prepare($query);
+        $statement->bindParam(":email", $email);
+        $statement->execute();
+
+        while ($fila = $statement->fetch(PDO::FETCH_ASSOC))
+            array_push($roles, $fila['rol']);
+
+        return $roles;
+    }
+    public function login($email,$contrasena){
+        $this->conexion();
+        $contrasena=md5($contrasena);
+        $sql="Select * from usuario where email=:email and contrasena=:contrasena";
+        $statetment=$this->db->prepare($sql);
+        $statetment->bindParam(":email",$email);
+        $statetment->bindParam(":contrasena",$contrasena);
+        $statetment->execute();
+        if ($statetment->fetch(PDO::FETCH_ASSOC)){
+            return true;
+        }else
+            return false;
+    }
+    public function validarRol($roles_permitidos){
+        $roles=$this->obtenerRoles($this->obtenerUsuario());
+        $valido=false;
+        foreach ($roles as $key => $value)
+            if(in_array($value,$roles_permitidos)){
+                $valido=true;
+            }
+        if (!$valido)
+            header("Location: login.php");
+    }
+    public function validarPermiso($permisos_permitidos){
+        $permisos=$this->obtenerPermisos($this->obtenerUsuario());
+        $valido=false;
+        foreach ($permisos as $key => $vlaue)
+            if (in_array($vlaue,$permisos_permitidos))
+                $valido=true;
+        if (!$valido)
+            die('Seguridad Activada, no se encontro un permiso valido');
+    }
+    public function obtenerUsuario(){
+
+        return $_SESSION['email'];
+    }
+    public function logout(){
+        session_destroy();
+    }
+    public function validarArchivo(){
+
+    }
+    function extname($file) {
+        $file = explode(".",basename($file));
+        return $file[count($file)-1];
+    }
+
+    function getfilesize($size) {
+        //if ($size < 2) return "$size byte";
+        $units = array(' B', ' KiB', ' MiB', ' GiB', ' TiB');
+        for ($i = 0; $size > 1024; $i++) { $size /= 1024; }
+        return round($size, 2).$units[$i];
+    }
+
 }
 $web= new linchub;
 $web->conexion();

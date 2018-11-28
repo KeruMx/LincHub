@@ -7,8 +7,42 @@ if (isset($_GET['idnoticia'])){
         if (isset($_POST['enviar'])){
             $datos = $_POST['datos'];
             $foto = $_FILES['foto']['name'];
+            $sql = "update noticia set fecha=:fecha, noticia=:noticia,titulo=:titulo";
+            $arch = false;
+            $valid = true;
+            if($foto != ""){
+                $foto_size = $_FILES['foto']['size'];
+                $foto_tmp = $_FILES['foto']['tmp_name'];
+                $origen = $foto_tmp;
+                $cualquiera = substr(md5(rand()), 20);
+                $foto = $cualquiera . "_" . $foto;
+                $foto = str_replace(" ", "_", $foto);
+                $destino = "../images/" . $foto;
+
+                if ($web->validarImagenNoti($_FILES['foto'])) {
+                    if(move_uploaded_file($origen, $destino)){
+                        $arch = true;
+                        $sql = $sql . ", foto = :foto ";
+                    } else
+                        echo '<div class="alert alert-danger" role="alert">Error desconocido.</div>';
+                } else {
+                    $valid = false;
+                    echo '<div class="alert alert-danger" role="alert">Error, la imagen/archivo no cumple con las características.</div>';
+                }
+            }
+            $sql = $sql ." where idnoticia = :idnoticia";
+            $statement = $web->db->prepare($sql);
+            $statement->bindParam(":titulo", $datos['titulo']);
+            $statement->bindParam(":noticia", $datos['noticia']);
+            $statement->bindParam(":fecha", $datos['fecha']);
+            if($arch){
+                $statement->bindParam(":foto", $foto);
+            }
+            $statement->bindParam(":idnoticia", $idnoticia, PDO::PARAM_INT);
+            if($statement->execute() && $valid)
+                echo '<div class="alert alert-success" role="alert">La noticia se actualizó.</div>';
         }
-        $parametros[':idnoticia'] = $idnoticia;
+        $parametros[':idnoticia']   = $idnoticia;
         $sql = "select * from noticia where idnoticia = :idnoticia";
         $noticia = $web->queryArray($sql, $parametros);
     }
@@ -21,7 +55,7 @@ if (isset($_GET['idnoticia'])){
 
     </div>
     <div class="col-sm-6">
-        <form action="noticias.actualizar.php?idnotica=<?php echo $idnoticia; ?>" method="post" class="form container" enctype="multipart/form-data">
+        <form action="noticias.actualizar.php?idnoticia=<?php echo $idnoticia; ?>" method="post" class="form container" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="">Titulo </label>
                 <input
@@ -37,7 +71,7 @@ if (isset($_GET['idnoticia'])){
                 <label for="date">Fecha </label>
                 <input
                     type="date"
-                    class="form-control" name="date" id="date" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="datos[fecha]" id="date" aria-describedby="helpId" placeholder="">
                 <small id="helpId" class="form-text text-muted">Fecha de modificación</small>
             </div>
             <div class="form-group">
