@@ -5,6 +5,7 @@
  * Date: 21/11/2018
  * Time: 09:15 AM
  */
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -38,6 +39,8 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <a class="dropdown-item" href="noticias.php">Noticias</a>
                     <a class="dropdown-item" href="pais.php ">País</a>
+                    <a class="dropdown-item" href="tipousuario.php">Tipo Usuario</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
                     <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>

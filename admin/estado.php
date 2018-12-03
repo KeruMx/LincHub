@@ -12,7 +12,6 @@ if (isset($_GET)) {
     $parametros['idpais'] = $_GET['idpais'];
 }
 $estado = $web->queryArray('Select * from estado join pais using (idpais) where idpais=:idpais',$parametros);
-print_r($estado);
 ?>
     <h1 class="display-4">Estado</h1>
     <a href="estado.insertar.php" class="btn btn-success">Nuevo Estado</a>
@@ -20,15 +19,16 @@ print_r($estado);
         <tr>
             <?php
             if ($estado==array()){
-
+                echo '<div class="alert alert-danger" role="alert">No hay Estados</div>';
             }else{
-                foreach (array_keys($estado[0]) as $index => $array_key) {
-                    echo "<th>".$array_key."</th>";
-            }
-
+                    foreach (array_keys($estado[0]) as $index => $array_key) {
+                        echo "<th>".$array_key."</th>";
+                    }
+                    echo "<th>Actualizar</th>";
+                    echo "<th>Eliminar</th>";
+                    echo "<th>Ver Municipio/City</th>";
             }?>
-            <th>Actualizar</th>
-            <th>Eliminar</th>
+
         </tr>
         <?php
         if ($estado==array()){

@@ -1,5 +1,5 @@
 <?php
-include('core/linchub.class.php');
+
 
 ?>
 <!DOCTYPE html>
@@ -12,6 +12,7 @@ include('core/linchub.class.php');
     <meta name="keywords" content="descarga busca 50gb almacenamiento gratuito"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
     <!-- Image and text -->
@@ -34,12 +35,22 @@ include('core/linchub.class.php');
                     <a class="nav-link" href="privacy.html">Politica de privacidad</a>
                 </li>
                 <li class="nav-item">
-                    <a href="m_arch.html"  class="btn btn-sm btn-outline-success my-2 my-sm-0" style="color: honeydew">&nbsp; Mis archivos &nbsp;</a>
+                    <a href="m_arch.php" class="btn btn-sm btn-outline-success my-2 my-sm-0" style="color: honeydew">&nbsp; Mis archivos &nbsp;</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#login" style="color: honeydew">Iniciar sesión</button>
-            &nbsp;
-            <a href="reg.html"  class="btn btn-sm btn-outline-warning my-2 my-sm-0" style="color: honeydew">Registrate</a>
+            <?php
+                if ($_SESSION==array()){
+                    echo "<button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"button\" data-toggle=\"modal\" data-target=\"#login\" style=\"color: honeydew\">Iniciar sesión</button>";
+                    echo "&nbsp";
+                    echo " <a href=\"reg.html\"  class=\"btn btn-sm btn-outline-warning my-2 my-sm-0\" style=\"color: honeydew\">Registrate</a>";
+                }
+                    else{
+                    echo "<form action='index.php' method='post'> ";
+                    echo "<button class=\"btn btn-outline-danger my-2 my-sm-0\"  style=\"color: honeydew\" name='logout'>Cerrar Sesión</button>";
+                    echo "</form>";
+                }
+                      ?>
+
             &nbsp;
             &nbsp;
 

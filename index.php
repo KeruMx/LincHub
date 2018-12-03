@@ -1,6 +1,12 @@
 <?php
-include ('header.php');
+include('core/linchub.class.php');
+if (isset($_POST['logout'])){
+    $web->logout();
+    header("Refresh:0");
+}
 $noticia=$web->obtenerNoticias();
+include ('header.php');
+
 ?>
         <section class="container-fluid">
             <?php

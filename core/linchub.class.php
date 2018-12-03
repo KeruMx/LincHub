@@ -5,7 +5,7 @@
  * Date: 17/11/2018
  * Time: 03:04 PM
  */
-
+session_start();
 class linchub{
     var $db;
     function conexion(){
@@ -73,10 +73,10 @@ class linchub{
         $this->conexion();
         $permisos=array();
         $query="select p.permiso from usuario u
-                  join rol_usuario r using(id_usuario)
+                  join rol_usuario r using(idusuario)
                   join rol_permiso rp USING(id_rol)
                   join permiso p using(id_permiso)
-                  where u.email = :email";
+                  where u.correo = :email";
         $statement=$this->db->prepare($query);
         $statement->bindParam(":email",$email);
         $statement->execute();
@@ -90,13 +90,12 @@ class linchub{
         $this->conexion();
         $roles = array();
         $query = "select r.rol from usuario u
-		join rol_usuario ru using(id_usuario)
+		join rol_usuario ru using(idusuario)
 		join rol r using(id_rol)
-		where u.email = :email";
+		where u.correo = :email";
         $statement = $this->db->prepare($query);
         $statement->bindParam(":email", $email);
         $statement->execute();
-
         while ($fila = $statement->fetch(PDO::FETCH_ASSOC))
             array_push($roles, $fila['rol']);
 
@@ -105,7 +104,7 @@ class linchub{
     public function login($email,$contrasena){
         $this->conexion();
         $contrasena=md5($contrasena);
-        $sql="Select * from usuario where email=:email and contrasena=:contrasena";
+        $sql="Select * from usuario where correo=:email and contrasena=:contrasena";
         $statetment=$this->db->prepare($sql);
         $statetment->bindParam(":email",$email);
         $statetment->bindParam(":contrasena",$contrasena);
@@ -128,9 +127,10 @@ class linchub{
     public function validarPermiso($permisos_permitidos){
         $permisos=$this->obtenerPermisos($this->obtenerUsuario());
         $valido=false;
-        foreach ($permisos as $key => $vlaue)
+        foreach ($permisos as $key => $vlaue){
             if (in_array($vlaue,$permisos_permitidos))
                 $valido=true;
+        }
         if (!$valido)
             die('Seguridad Activada, no se encontro un permiso valido');
     }
@@ -155,7 +155,22 @@ class linchub{
         for ($i = 0; $size > 1024; $i++) { $size /= 1024; }
         return round($size, 2).$units[$i];
     }
+//if (isset($_GET['download']))
+//downloadfile($_GET['download']);
 
+    function downloadfile($file){
+//        global $config, $lang;
+//        $file = $config['storage_path'].'/'.basename($file);
+        if (!is_file($file)) { return; }
+        header("Content-Type: application/octet-stream");
+        header("Content-Size: ".filesize($file));
+        header("Content-Disposition: attachment; filename=\"".basename($file)."\"");
+        header("Content-Length: ".filesize($file));
+        header("Content-transfer-encoding: binary");
+        @readfile($file);
+//        if ($config['log_download']) logadm($lang['DOWNLOAD'].' '.$file);
+//        exit;
+    }
 }
 $web= new linchub;
 $web->conexion();
